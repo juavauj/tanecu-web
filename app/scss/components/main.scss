@@ -34,29 +34,61 @@
         .main__desc {
             margin-bottom: rem(100);
         }
+
+        footer {
+            p {
+                margin: rem(7) 0;
+            }
+        }
+
+        .about__first {
+            margin-bottom: rem(40);
+        }
+
+        .about__second {
+            margin-bottom: rem(130);
+        }
+
+        .about__together {
+            font-weight: 700;
+        }
+
+        .about__email {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: rem(15);
+
+                img {
+                    width: 8%;
+                    filter: invert(53%) sepia(98%) saturate(929%) hue-rotate(0deg) brightness(103%) contrast(105%);
+                }
+
+            p {
+                font-weight: 400;
+                font-size: rem(28);
+            }
+        }
     }
     }
 
     @include breakpoint(xlarge) {
-        grid-template-columns: 1fr;
-        grid-template-areas: 'section';
     
         section {
             padding: 0 rem(145) 0 rem(50);
-            grid-area: section;
-            place-self: center;
-            font-size: rem(42);
-            color: var(--orange);
+            font-size: rem(40);
+        }
+        }
+
+    @include breakpoint-down(medium) {
+
+    }
+
+    @include breakpoint-down(large) {
     
-            p {
-                font-weight: 500;
-            }
-    
-            a {
-                color: var(--orange);
-                font-weight: 700;
-                text-decoration: underline;
-            }
+        section {
+            padding: 0 rem(80) 0 rem(50);
+            font-size: rem(27);
     
             .main__welcome {
                 margin-bottom: rem(90);
@@ -65,10 +97,41 @@
             .main__desc {
                 margin-bottom: rem(100);
             }
+    
+            footer {
+                p {
+                    margin: rem(7) 0;
+                }
+            }
+    
+            .about__first {
+                margin-bottom: rem(40);
+            }
+    
+            .about__second {
+                margin-bottom: rem(110);
+            }
+    
+            .about__together {
+                font-weight: 700;
+            }
+    
+            .about__email {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: rem(15);
+    
+                    img {
+                        width: 8%;
+                        filter: invert(53%) sepia(98%) saturate(929%) hue-rotate(0deg) brightness(103%) contrast(105%);
+                    }
+    
+                p {
+                    font-weight: 400;
+                    font-size: rem(26);
+                }
+            }
         }
-        }
-
-    @include breakpoint-down(medium) {
-
     }
 }
