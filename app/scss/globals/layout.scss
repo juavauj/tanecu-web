@@ -1,0 +1,20 @@
+@use '../util/' as *;
+
+.container {
+    height: 100vh;
+    display: grid;
+
+    @include breakpoint(large) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 'header main';
+    }
+
+    @include breakpoint-down(medium){
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+        'header'
+        'main';
+    }
+}

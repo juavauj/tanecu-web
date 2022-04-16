@@ -1,0 +1,74 @@
+@use '../util/' as *;
+
+.main {
+    grid-area: main;
+    background-color: var(--white);
+    height: 100vh;
+    display: grid;
+
+    @include breakpoint(large) {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'section';
+
+    section {
+        padding: 0 rem(80) 0 rem(50);
+        grid-area: section;
+        place-self: center;
+        font-size: rem(32);
+        color: var(--orange);
+
+        p {
+            font-weight: 500;
+        }
+
+        a {
+            color: var(--orange);
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        .main__welcome {
+            margin-bottom: rem(90);
+        }
+
+        .main__desc {
+            margin-bottom: rem(100);
+        }
+    }
+    }
+
+    @include breakpoint(xlarge) {
+        grid-template-columns: 1fr;
+        grid-template-areas: 'section';
+    
+        section {
+            padding: 0 rem(145) 0 rem(50);
+            grid-area: section;
+            place-self: center;
+            font-size: rem(42);
+            color: var(--orange);
+    
+            p {
+                font-weight: 500;
+            }
+    
+            a {
+                color: var(--orange);
+                font-weight: 700;
+                text-decoration: underline;
+            }
+    
+            .main__welcome {
+                margin-bottom: rem(90);
+            }
+    
+            .main__desc {
+                margin-bottom: rem(100);
+            }
+        }
+        }
+
+    @include breakpoint-down(medium) {
+
+    }
+}
