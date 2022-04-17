@@ -1,38 +1,44 @@
-@use '../util/' as *;
+@use '../util/'as *;
 
 .header {
     grid-area: header;
+    position: fixed;
+    height: 100vmin;
+    width: 50vw;
     background-color: var(--orange);
     display: grid;
     grid-template-rows: 10% 83% 7%;
-    grid-template-areas: 
-    'tanecu'
-    'logo'
-    'links';
+    grid-template-areas:
+        'tanecu'
+        'logo'
+        'links';
 
     @include breakpoint(large) {
         &__tanecu {
             grid-area: tanecu;
             margin: rem(60) rem(45);
+
             h1 {
-             font-size: rem(42);
-             color: var(--white);
-             font-weight: 600;
-             letter-spacing: rem(0.5);
+                font-size: rem(42);
+                color: var(--white);
+                font-weight: 600;
+                letter-spacing: rem(0.5);
             }
         }
+
         &__logo {
             grid-area: logo;
             display: flex;
             place-self: center;
             width: 40%;
             height: auto;
-            
+
             img {
                 max-width: 100%;
                 max-height: 100%;
             }
         }
+
         &__links {
             grid-area: links;
             border-top: solid rem(3);
@@ -46,46 +52,49 @@
                 color: var(--white);
                 font-weight: 500;
 
-            img {
-                margin-bottom: rem(-9.5);
-                filter: invert(100%) sepia(1%) saturate(1225%) hue-rotate(207deg) brightness(123%) contrast(93%);
-                width: 80%;
-            }
+                img {
+                    margin-bottom: rem(-9.5);
+                    filter: invert(100%) sepia(1%) saturate(1225%) hue-rotate(207deg) brightness(123%) contrast(93%);
+                    width: 80%;
+                }
             }
 
 
-            
+
         }
     }
 
     @include breakpoint(xlarge) {
         &__tanecu {
             h1 {
-             font-size: rem(48);
+                font-size: rem(48);
             }
         }
+
         &__logo {
             img {
                 transform: scale(1.1);
             }
         }
+
         &__links {
             a {
                 font-size: rem(28);
             }
 
 
-            
+
         }
     }
 
-    @include breakpoint-down(medium){
+    @include breakpoint-down(medium) {
+        width: 100vw;
     }
 
     @include breakpoint-down(large) {
         &__tanecu {
             h1 {
-             font-size: rem(38);
+                font-size: rem(38);
             }
         }
     }
