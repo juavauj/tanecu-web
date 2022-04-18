@@ -13,31 +13,89 @@
         'logo'
         'links';
 
-    @include breakpoint(large) {
+    &__tanecu {
+        grid-area: tanecu;
+        margin: rem(60) rem(45);
+        padding: 0;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+            font-size: rem(42);
+            color: var(--white);
+            font-weight: 400;
+            letter-spacing: rem(0.5);
+            margin: 0;
+        }
+
+        &-menu {
+            > span {
+                display: block;
+                width: rem(35);
+                height: rem(3.5);
+                background-color: var(--white);
+                transition: all 100ms ease-in-out;
+                transform-origin: left center;
+
+                &:not(:last-child) {
+                    margin-bottom: rem(8);
+                }
+            }
+
+            &.open {
+                > span:first-child {
+                    transform: rotate(45deg);
+                }
+
+                > span:nth-child(2) {
+                    opacity: 0;
+                }
+
+                > span:last-child {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+
+    &__logo {
+        grid-area: logo;
+        display: flex;
+        place-self: center;
+        width: 40%;
+        height: auto;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    @include breakpoint-down(medium) {
+        height: 50vh;
+        width: 100vw;
+        // background-color: green;
+
         &__tanecu {
-            grid-area: tanecu;
-            margin: rem(60) rem(45);
-
-            h1 {
-                font-size: rem(42);
-                color: var(--white);
-                font-weight: 600;
-                letter-spacing: rem(0.5);
-            }
-        }
-
-        &__logo {
-            grid-area: logo;
+            margin: rem(40) rem(45);
             display: flex;
-            place-self: center;
-            width: 40%;
-            height: auto;
+            justify-content: space-between;
 
-            img {
-                max-width: 100%;
-                max-height: 100%;
-            }
         }
+
+        &__links {
+            display: none;
+        }
+    }
+
+
+
+    @include breakpoint(large) {
+        width: 50vw;
+        height: 100vh;
+        background-color: var(--orange);
 
         &__links {
             grid-area: links;
@@ -58,9 +116,6 @@
                     width: 80%;
                 }
             }
-
-
-
         }
     }
 
@@ -87,8 +142,73 @@
         }
     }
 
-    @include breakpoint-down(medium) {
+
+
+    @include breakpoint-down(s-medium) {
+        height: 50vh;
         width: 100vw;
+        background-color: red;
+
+        &__tanecu {
+            margin: rem(30) rem(42);
+        }
+
+        &__links {
+            display: none;
+        }
+    }
+
+    @include breakpoint-down(small) {
+        height: 50vh;
+        width: 100vw;
+        // background-color: var(--orange);
+        background-color: magenta;
+
+        &__tanecu {
+            margin: rem(30) rem(40);
+        }
+
+        &__links {
+            display: none;
+        }
+    }
+
+    @include breakpoint-down(mini) {
+        height: 43vh;
+        width: 100vw;
+
+        &__tanecu {
+            margin: rem(20) rem(30);
+
+            a {
+                h1 {
+                    font-size: rem(32);
+                }
+            }
+        }
+
+        &__links {
+            display: none;
+        }
+    }
+
+    @include breakpoint-down(extra-mini) {
+        height: 38vh;
+        width: 100vw;
+
+        &__tanecu {
+            margin: rem(15) rem(26);
+
+            a {
+                h1 {
+                    font-size: rem(28);
+                }
+            }
+        }
+
+        &__links {
+            display: none;
+        }
     }
 
     @include breakpoint-down(large) {

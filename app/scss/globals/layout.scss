@@ -3,6 +3,7 @@
 .container {
     height: 100vh;
     display: grid;
+    background-color: var(--white);
 
     @include breakpoint(large) {
         grid-template-columns: 1fr 1fr;
