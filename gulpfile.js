@@ -16,13 +16,7 @@ function scssTask() {
     .pipe(dest('dist', { sourcemaps: '.' }));
 }
 
-// JavaScript Task
-function jsTask() {
-  return src('app/js/script.js', { sourcemaps: true })
-    .pipe(babel({ presets: ['@babel/preset-env'] }))
-    .pipe(terser())
-    .pipe(dest('dist', { sourcemaps: '.' }));
-}
+// // JavaScript
 
 // Browsersync
 function browserSyncServe(cb) {
@@ -48,13 +42,13 @@ function browserSyncReload(cb) {
 function watchTask() {
   watch('*.html', browserSyncReload);
   watch(
-    ['app/scss/**/*.scss', 'app/**/*.js'],
-    series(scssTask, jsTask, browserSyncReload)
+    ['app/scss/**/*.scss'],
+    series(scssTask, browserSyncReload)
   );
 }
 
 // Default Gulp Task
-exports.default = series(scssTask, jsTask, browserSyncServe, watchTask);
+exports.default = series(scssTask, browserSyncServe, watchTask);
 
 // Build Gulp Task
-exports.build = series(scssTask, jsTask);
+exports.build = series(scssTask);

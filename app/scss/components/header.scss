@@ -13,6 +13,14 @@
         'logo'
         'links';
 
+    .overlay {
+        display: none;
+
+        &-links {
+            display: none;
+        }
+    }
+
     &__tanecu {
         grid-area: tanecu;
         margin: rem(60) rem(45);
@@ -31,32 +39,7 @@
         }
 
         &-menu {
-            > span {
-                display: block;
-                width: rem(35);
-                height: rem(3.5);
-                background-color: var(--white);
-                transition: all 100ms ease-in-out;
-                transform-origin: left center;
-
-                &:not(:last-child) {
-                    margin-bottom: rem(8);
-                }
-            }
-
-            &.open {
-                > span:first-child {
-                    transform: rotate(45deg);
-                }
-
-                > span:nth-child(2) {
-                    opacity: 0;
-                }
-
-                > span:last-child {
-                    transform: rotate(-45deg);
-                }
-            }
+            display: none;
         }
     }
 
@@ -76,17 +59,98 @@
     @include breakpoint-down(medium) {
         height: 50vh;
         width: 100vw;
-        // background-color: green;
+
+
+        &.open {
+            .overlay {
+                display: block;
+
+                &-links {
+                    height: 50vh;
+                    display: flex;
+                    flex-direction: column;
+                    gap: rem(30);
+                    padding: rem(40) rem(50);
+
+                    a {
+                        font-size: rem(45);
+                        width: 50%;
+                    }
+                }
+            }
+
+            .header__tanecu-menu {
+                >span:first-child {
+                    transform: rotate(45deg);
+                }
+
+                >span:nth-child(2) {
+                    opacity: 0;
+                }
+
+                >span:last-child {
+                    transform: rotate(-45deg);
+                }
+            }
+        }
 
         &__tanecu {
             margin: rem(40) rem(45);
             display: flex;
             justify-content: space-between;
 
+            &-menu {
+                display: block;
+                z-index: 99;
+
+                >span {
+                    display: block;
+                    width: rem(35);
+                    height: rem(3.5);
+                    background-color: var(--white);
+                    transition: all 200ms ease-in-out;
+                    transform-origin: rem(1) rem(2);
+
+                    &:not(:last-child) {
+                        margin-bottom: rem(8);
+                    }
+                }
+            }
         }
 
         &__links {
             display: none;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            height: 50vh;
+            top: rem(0);
+            right: rem(0);
+            bottom: rem(0);
+            left: rem(0);
+            background-color: var(--orange);
+
+
+            &-links {
+                display: block;
+
+                a {
+                    text-decoration: underline;
+                    color: var(--white);
+                }
+
+                &-insta {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        filter: invert(100%) sepia(1%) saturate(1225%) hue-rotate(207deg) brightness(123%) contrast(93%);
+                        width: 50%;
+                    }
+                }
+            }
         }
     }
 
@@ -147,7 +211,19 @@
     @include breakpoint-down(s-medium) {
         height: 50vh;
         width: 100vw;
-        background-color: red;
+
+        &.open {
+            .overlay {
+                &-links {
+                    gap: rem(25);
+                    padding: rem(30) rem(50);
+
+                    a {
+                        font-size: rem(40);
+                    }
+                }
+            }
+        }
 
         &__tanecu {
             margin: rem(30) rem(42);
@@ -161,8 +237,20 @@
     @include breakpoint-down(small) {
         height: 50vh;
         width: 100vw;
-        // background-color: var(--orange);
-        background-color: magenta;
+        background-color: var(--orange);
+
+        &.open {
+            .overlay {
+                &-links {
+                    gap: rem(20);
+                    padding: rem(27) rem(47);
+
+                    a {
+                        font-size: rem(37);
+                    }
+                }
+            }
+        }
 
         &__tanecu {
             margin: rem(30) rem(40);
@@ -177,12 +265,42 @@
         height: 43vh;
         width: 100vw;
 
+        &.open {
+            .overlay {
+
+                height: 43vh;
+
+                &-links {
+                    gap: rem(17);
+                    padding: rem(25) rem(30);
+
+                    a {
+                        font-size: rem(32);
+                    }
+                }
+            }
+        }
+
         &__tanecu {
             margin: rem(20) rem(30);
 
             a {
                 h1 {
                     font-size: rem(32);
+                }
+            }
+
+            &-menu {
+                padding-top: rem(7);
+
+                >span {
+                    width: rem(28);
+                    height: rem(2.5);
+                    transform-origin: rem(1) rem(1.4);
+
+                    &:not(:last-child) {
+                        margin-bottom: rem(7);
+                    }
                 }
             }
         }
@@ -195,6 +313,22 @@
     @include breakpoint-down(extra-mini) {
         height: 38vh;
         width: 100vw;
+
+        &.open {
+            .overlay {
+
+                height: 38vh;
+
+                &-links {
+                    gap: rem(15);
+                    padding: rem(14) rem(20);
+
+                    a {
+                        font-size: rem(27);
+                    }
+                }
+            }
+        }
 
         &__tanecu {
             margin: rem(15) rem(26);

@@ -24,27 +24,37 @@
 
    <link rel="stylesheet" href="/dist/style.css">
 
-   <script defer src=“/dist/script.js”></script>
+   <script defer src="app/js/script.js"></script>
 </head>
 
 <body class="container">
     <header class="header">
+        <div class="overlay">
+            <div class="overlay-links">
+                <a href="http://tanecu.com/creations">Creations</a>
+                <a href="http://tanecu.com/about">About us</a>
+                <a href="mailto: info@tanecu.com">Contact</a>
+                    <a class="overlay-links-insta" href="https://instagram.com/tanecu.audio/"><img src="/app/img/icons8-instagram.svg"
+                        alt="Instagram">tanecu.audio</a>
+            </div>
+        </div>
         <div class="header__tanecu">
             <a href="/">
                 <h1>tanecu</h1>
             </a>
-            <a id="btnHambur" href="#" class="header__tanecu-menu hide-for-desktop">
+            <a id="btnHambur" class="header__tanecu-menu hide-for-desktop">
                 <span></span>
                 <span></span>
                 <span></span>
             </a>
+            
         </div>
         <figure class="header__logo">
             <img src="/app/img/logo.svg" alt="tanecu Logo" />
         </figure>
         <nav class="header__links">
             <a href="mailto: info@tanecu.com">contact</a>
-            <a href="/about.html">about us</a>
+            <a href="http://tanecu.com/about">about us</a>
             <a href="https://instagram.com/tanecu.audio/" target="_blank"><img src="/app/img/icons8-instagram.svg"
                     alt="Instagram"></a>
         </nav>
@@ -55,7 +65,7 @@
             <p class="main__welcome">Welcome!</p>
             <p class="main__desc">We are <i>tanecu</i>, an experimental studio for designing and organizing sound for
                 video games, animation and films.</p>
-            <a class="main__check" href="/creations.html">Check out our creations</a>
+            <a class="main__check" href="http://tanecu.com/creations">Check out our creations</a>
         </section>
     </main>
 </body>
