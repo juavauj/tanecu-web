@@ -6,7 +6,7 @@
     background-color: var(--white);
 
     @include breakpoint(large) {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1.5fr;
         grid-template-rows: 1fr;
         grid-template-areas: 'header main';
     }
